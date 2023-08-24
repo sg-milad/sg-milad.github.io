@@ -1,18 +1,688 @@
-<!DOCTYPE html>
 <html>
+
 <head>
-    <title>PDF Viewer</title>
-    <style>
-        .pdf-container {
-            width: 100%;
-            height: 100vh;
-            overflow: auto;
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <style type="text/css">
+        @import url(https://themes.googleusercontent.com/fonts/css?kit=dpiI8CyVsrzWsJLBFKehGpLhv3qFjX7dUn1mYxfCXhI);
+
+        .lst-kix_7qwff7de7zkq-2>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_7qwff7de7zkq-4>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_7qwff7de7zkq-1>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_7qwff7de7zkq-5>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_cmqpkz9239j2-1>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_cmqpkz9239j2-2>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_7qwff7de7zkq-3>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_os94txpoyvz9-7>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_os94txpoyvz9-8>li:before {
+            content: "\0025a0   "
+        }
+
+        ul.lst-kix_cmqpkz9239j2-0 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_cmqpkz9239j2-1 {
+            list-style-type: none
+        }
+
+        .lst-kix_os94txpoyvz9-6>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_cmqpkz9239j2-0>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_7qwff7de7zkq-0>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_kcpwe4eqx5lb-3>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_kcpwe4eqx5lb-2>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_kcpwe4eqx5lb-1>li:before {
+            content: "\0025cb   "
+        }
+
+        ul.lst-kix_os94txpoyvz9-7 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_cmqpkz9239j2-6 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_os94txpoyvz9-8 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_cmqpkz9239j2-7 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_cmqpkz9239j2-8 {
+            list-style-type: none
+        }
+
+        .lst-kix_kcpwe4eqx5lb-0>li:before {
+            content: "\0025cf   "
+        }
+
+        ul.lst-kix_os94txpoyvz9-3 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_cmqpkz9239j2-2 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_os94txpoyvz9-4 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_cmqpkz9239j2-3 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_os94txpoyvz9-5 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_cmqpkz9239j2-4 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_os94txpoyvz9-6 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_cmqpkz9239j2-5 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_7qwff7de7zkq-2 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_os94txpoyvz9-0 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_7qwff7de7zkq-1 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_os94txpoyvz9-1 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_7qwff7de7zkq-4 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_os94txpoyvz9-2 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_7qwff7de7zkq-3 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_7qwff7de7zkq-0 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_7qwff7de7zkq-6 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_7qwff7de7zkq-5 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_7qwff7de7zkq-8 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_7qwff7de7zkq-7 {
+            list-style-type: none
+        }
+
+        .lst-kix_os94txpoyvz9-0>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_kcpwe4eqx5lb-4>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_os94txpoyvz9-2>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_cmqpkz9239j2-8>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_kcpwe4eqx5lb-5>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_os94txpoyvz9-3>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_os94txpoyvz9-4>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_kcpwe4eqx5lb-6>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_kcpwe4eqx5lb-8>li:before {
+            content: "\0025a0   "
+        }
+
+        ul.lst-kix_kcpwe4eqx5lb-0 {
+            list-style-type: none
+        }
+
+        .lst-kix_os94txpoyvz9-5>li:before {
+            content: "\0025a0   "
+        }
+
+        ul.lst-kix_kcpwe4eqx5lb-1 {
+            list-style-type: none
+        }
+
+        li.li-bullet-0:before {
+            margin-left: -18pt;
+            white-space: nowrap;
+            display: inline-block;
+            min-width: 18pt
+        }
+
+        ul.lst-kix_kcpwe4eqx5lb-2 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_kcpwe4eqx5lb-3 {
+            list-style-type: none
+        }
+
+        .lst-kix_kcpwe4eqx5lb-7>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_cmqpkz9239j2-3>li:before {
+            content: "\0025cf   "
+        }
+
+        ul.lst-kix_kcpwe4eqx5lb-4 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_kcpwe4eqx5lb-5 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_kcpwe4eqx5lb-6 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_kcpwe4eqx5lb-7 {
+            list-style-type: none
+        }
+
+        ul.lst-kix_kcpwe4eqx5lb-8 {
+            list-style-type: none
+        }
+
+        .lst-kix_cmqpkz9239j2-4>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_cmqpkz9239j2-7>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_7qwff7de7zkq-6>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_7qwff7de7zkq-8>li:before {
+            content: "\0025a0   "
+        }
+
+        .lst-kix_cmqpkz9239j2-5>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_os94txpoyvz9-1>li:before {
+            content: "\0025cb   "
+        }
+
+        .lst-kix_cmqpkz9239j2-6>li:before {
+            content: "\0025cf   "
+        }
+
+        .lst-kix_7qwff7de7zkq-7>li:before {
+            content: "\0025cb   "
+        }
+
+        ol {
+            margin: 0;
+            padding: 0
+        }
+
+        table td,
+        table th {
+            padding: 0
+        }
+
+        .c20 {
+            color: #666666;
+            font-weight: 400;
+            text-decoration: none;
+            vertical-align: baseline;
+            font-size: 10pt;
+            font-family: "Arial";
+            font-style: normal
+        }
+
+        .c0 {
+            color: #000000;
+            font-weight: 400;
+            text-decoration: none;
+            vertical-align: baseline;
+            font-size: 12pt;
+            font-family: "Arial";
+            font-style: normal
+        }
+
+        .c11 {
+            color: #666666;
+            font-weight: 400;
+            text-decoration: none;
+            vertical-align: baseline;
+            font-size: 11pt;
+            font-family: "Arial";
+            font-style: italic
+        }
+
+        .c5 {
+            color: #000000;
+            font-weight: 400;
+            text-decoration: none;
+            vertical-align: baseline;
+            font-size: 11pt;
+            font-family: "Arial";
+            font-style: normal
+        }
+
+        .c4 {
+            padding-top: 0pt;
+            padding-bottom: 0pt;
+            line-height: 1.15;
+            orphans: 2;
+            widows: 2;
+            text-align: left
+        }
+
+        .c9 {
+            color: #1c4587;
+            text-decoration: none;
+            vertical-align: baseline;
+            font-size: 13pt;
+            font-family: "Arial";
+            font-style: normal
+        }
+
+        .c21 {
+            color: #1c4587;
+            text-decoration: none;
+            vertical-align: baseline;
+            font-size: 28pt;
+            font-family: "Roboto";
+            font-style: normal
+        }
+
+        .c15 {
+            color: #000000;
+            font-weight: 400;
+            text-decoration: none;
+            vertical-align: baseline;
+            font-family: "Roboto";
+            font-style: normal
+        }
+
+        .c23 {
+            padding-top: 0pt;
+            padding-bottom: 0pt;
+            line-height: 1.25;
+            orphans: 2;
+            widows: 2;
+            text-align: left
+        }
+
+        .c1 {
+            background-color: #ffffff;
+            color: #666666;
+            font-weight: 400;
+            font-size: 10.5pt;
+            font-family: "Roboto";
+            font-style: italic
+        }
+
+        .c13 {
+            color: #000000;
+            text-decoration: none;
+            vertical-align: baseline;
+            font-family: "Arial";
+            font-style: normal
+        }
+
+        .c18 {
+            text-decoration-skip-ink: none;
+            -webkit-text-decoration-skip: none;
+            color: #1155cc;
+            text-decoration: underline
+        }
+
+        .c8 {
+            text-decoration-skip-ink: none;
+            -webkit-text-decoration-skip: none;
+            color: #434343;
+            text-decoration: underline
+        }
+
+        .c14 {
+            background-color: #ffffff;
+            max-width: 511.2pt;
+            padding: 0pt 50.4pt 50.4pt 50.4pt;
+            zoom:2;
+        }
+
+        .c12 {
+            color: #666666;
+            font-style: italic
+        }
+
+        .c17 {
+            padding: 0;
+            margin: 0
+        }
+
+        .c10 {
+            color: inherit;
+            text-decoration: inherit
+        }
+
+        .c7 {
+            margin-left: 36pt;
+            padding-left: 0pt
+        }
+
+        .c16 {
+            color: #434343
+        }
+
+        .c3 {
+            font-weight: 700
+        }
+
+        .c22 {
+            color: #1c4587
+        }
+
+        .c2 {
+            font-size: 12pt
+        }
+
+        .c6 {
+            height: 11pt
+        }
+
+        .c19 {
+            font-size: 13pt
+        }
+
+        .title {
+            padding-top: 0pt;
+            color: #000000;
+            font-size: 26pt;
+            padding-bottom: 3pt;
+            font-family: "Arial";
+            line-height: 1.15;
+            page-break-after: avoid;
+            orphans: 2;
+            widows: 2;
+            text-align: left
+        }
+
+        .subtitle {
+            padding-top: 0pt;
+            color: #666666;
+            font-size: 15pt;
+            padding-bottom: 16pt;
+            font-family: "Arial";
+            line-height: 1.15;
+            page-break-after: avoid;
+            orphans: 2;
+            widows: 2;
+            text-align: left
+        }
+
+        li {
+            color: #000000;
+            font-size: 11pt;
+            font-family: "Arial"
+        }
+
+        p {
+            margin: 0;
+            color: #000000;
+            font-size: 11pt;
+            font-family: "Arial"
+        }
+
+        h1 {
+            padding-top: 20pt;
+            color: #000000;
+            font-size: 20pt;
+            padding-bottom: 6pt;
+            font-family: "Arial";
+            line-height: 1.15;
+            page-break-after: avoid;
+            orphans: 2;
+            widows: 2;
+            text-align: left
+        }
+
+        h2 {
+            padding-top: 18pt;
+            color: #000000;
+            font-size: 16pt;
+            padding-bottom: 6pt;
+            font-family: "Arial";
+            line-height: 1.15;
+            page-break-after: avoid;
+            orphans: 2;
+            widows: 2;
+            text-align: left
+        }
+
+        h3 {
+            padding-top: 16pt;
+            color: #434343;
+            font-size: 14pt;
+            padding-bottom: 4pt;
+            font-family: "Arial";
+            line-height: 1.15;
+            page-break-after: avoid;
+            orphans: 2;
+            widows: 2;
+            text-align: left
+        }
+
+        h4 {
+            padding-top: 14pt;
+            color: #666666;
+            font-size: 12pt;
+            padding-bottom: 4pt;
+            font-family: "Arial";
+            line-height: 1.15;
+            page-break-after: avoid;
+            orphans: 2;
+            widows: 2;
+            text-align: left
+        }
+
+        h5 {
+            padding-top: 12pt;
+            color: #666666;
+            font-size: 11pt;
+            padding-bottom: 4pt;
+            font-family: "Arial";
+            line-height: 1.15;
+            page-break-after: avoid;
+            orphans: 2;
+            widows: 2;
+            text-align: left
+        }
+
+        h6 {
+            padding-top: 12pt;
+            color: #666666;
+            font-size: 11pt;
+            padding-bottom: 4pt;
+            font-family: "Arial";
+            line-height: 1.15;
+            page-break-after: avoid;
+            font-style: italic;
+            orphans: 2;
+            widows: 2;
+            text-align: left
         }
     </style>
 </head>
-<body>
-    <div class="pdf-container">
-        <embed src="pdf/milad.pdf" type="application/pdf" width="100%" height="100%">
+
+<body class="c14 doc-content">
+        
+    <div>
+        <p class="c6 c23"><span class="c5"></span></p>
     </div>
+    <p class="c4"><span class="c3 c21">MILAD BACHARI</span></p>
+    <p class="c4"><span class="c2 c15">Node.js developer | Nest.js | express.js</span></p>
+    <p class="c4"><span class="c2 c16">Ahvaz</span><span class="c16 c2">&nbsp;| +989054793672 | </span><span
+            class="c8 c2"><a class="c10" href="mailto:miladbachari14@gmail.com">Email address</a></span><span
+            class="c16 c2">&nbsp;| </span><span class="c2 c8"><a class="c10"
+                href="https://www.google.com/url?q=https://www.linkedin.com/in/sg-milad/&amp;sa=D&amp;source=editors&amp;ust=1692869816652728&amp;usg=AOvVaw3X18e-6xQJA9NTkeIq_Tw2">Linkedin</a></span><span
+            class="c16 c2">&nbsp;| </span><span class="c8 c2"><a class="c10"
+                href="https://www.google.com/url?q=https://github.com/sg-milad&amp;sa=D&amp;source=editors&amp;ust=1692869816653147&amp;usg=AOvVaw0RFdPX1nFTG5Tz7SQvEFax">Github</a></span>
+    </p>
+    <p class="c4"><span class="c9 c3">SUMMARY</span></p>
+    <p class="c4"><span class="c2">A coding enthusiast seeks to join a professional team to enhance their back-end
+            development skills. Eagerness to learn and collaborate with experienced professionals highlights their
+            passion for growth in the field.</span><span class="c3 c2">&nbsp;1.5 years experience</span><span
+            class="c2">&nbsp;in back-end development</span></p>
+    <p class="c4 c6"><span class="c5"></span></p>
+    <p class="c4"><span
+            class="c3 c19 c22">EXPERIENCE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+            class="c2">+6 </span><span class="c12">Month | </span><span class="c1">Present</span><span
+            class="c12">&nbsp;</span></p>
+    <p class="c4"><span class="c3 c2">Back-end</span><span class="c0">, Nobat |
+            Tehran&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    </p>
+    <ul class="c17 lst-kix_7qwff7de7zkq-0 start">
+        <li class="c4 c7 li-bullet-0"><span class="c2">Worked alongside senior developers to understand and
+                implement</span><span class="c13 c3 c2">&nbsp;CQRS principles</span></li>
+        <li class="c4 c7 li-bullet-0"><span class="c2">Actively participated in</span><span class="c3 c2">&nbsp;code
+                reviews</span><span class="c2">, ensuring code quality, security, and adherence to coding
+                standards</span><img src="images/image1.png"></li>
+        <li class="c4 c7 li-bullet-0"><span class="c2">Assisted in debugging and resolving issues, ensuring the smooth
+                functioning of applications, and identifying opportunities for performance improvement</span></li>
+    </ul>
+    <p class="c4"><span class="c3 c2">Back-end</span><span class="c2">, Raychat |
+            Tehran&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+3
+        </span><span class="c12">Month &nbsp;</span></p>
+    <ul class="c17 lst-kix_7qwff7de7zkq-0">
+        <li class="c4 c7 li-bullet-0"><span class="c2">Experienced in creating and maintaining</span><span
+                class="c3 c2">&nbsp;technical documentation</span><span class="c2">&nbsp;for programs</span></li>
+        <li class="c4 c7 li-bullet-0"><span class="c2">Skilled in troubleshooting and resolving programming issues
+                quickly</span></li>
+        <li class="c4 c7 li-bullet-0"><span class="c3 c2">Experienced with nest.js</span><span class="c2">&nbsp;and
+                express js</span></li>
+    </ul>
+    <p class="c4"><span class="c3 c2">Back-end</span><span class="c2">, Freelancer
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3
+        </span><span class="c12">Month </span></p>
+    <ul class="c17 lst-kix_7qwff7de7zkq-0">
+        <li class="c4 c7 li-bullet-0"><span class="c2">Developed web app with nodejs</span><span
+                class="c0">&nbsp;</span></li>
+        <li class="c4 c7 li-bullet-0"><span class="c2">Designed a database for manege users and blog post</span></li>
+        <li class="c4 c7 li-bullet-0"><span class="c3 c2">Experienced</span><span class="c2">&nbsp;</span><span
+                class="c3 c2">with express js</span><span class="c2">&nbsp;and Mongo DB</span></li>
+    </ul>
+    <p class="c4 c6"><span class="c5"></span></p>
+    <p class="c4"><span class="c3 c9">PROJECT</span></p>
+    <p class="c4"><span class="c3 c2">Back-end</span><span class="c2">, </span><span class="c18 c2"><a class="c10"
+                href="https://www.google.com/url?q=https://github.com/sg-milad/nest-cqrs-vocabMinder&amp;sa=D&amp;source=editors&amp;ust=1692869816658403&amp;usg=AOvVaw3y8jtK1eJTRUGYc8NuCpaz">vocabMinder</a></span>
+    </p>
+    <ul class="c17 lst-kix_os94txpoyvz9-0 start">
+        <li class="c4 c7 li-bullet-0"><span class="c2">Developed a dynamic web application using </span><span
+                class="c2 c3">NestJS, PostgreSQL,</span><span class="c0">&nbsp;and TypeORM</span></li>
+        <li class="c4 c7 li-bullet-0"><span class="c2">Utilized </span><span class="c3 c2">Docker</span><span
+                class="c0">&nbsp;to containerize the application, enhancing scalability and enabling consistent
+                deployment across different environments.</span></li>
+        <li class="c4 c7 li-bullet-0"><span class="c2">Designed the application following the</span><span
+                class="c3 c2">&nbsp;microservices architectural pattern</span><span class="c2">,
+                implementing</span><span class="c3 c2">(CQRS)</span><span class="c0">&nbsp;for improved scalability,
+                maintainability, and separation of concerns.</span></li>
+        <li class="c4 c7 li-bullet-0"><span class="c2">Conducted thorough</span><span class="c3 c2">&nbsp;end-to-end
+                testing </span><span class="c0">using automated test suites to validate the functionality and
+                reliability of the microservice, ensuring robustness and stability.</span></li>
+    </ul>
+    <p class="c4"><span class="c2">My Other project on </span><span class="c2 c18"><a class="c10"
+                href="https://www.google.com/url?q=https://github.com/sg-milad&amp;sa=D&amp;source=editors&amp;ust=1692869816659912&amp;usg=AOvVaw3Uc-_7byrTkGeHyXmVbzeh">GitHub</a></span><span
+            class="c2">&nbsp;</span><span>&nbsp;</span></p>
+    <p class="c4"><span class="c9 c3">SKILLS</span></p>
+    <p class="c4"><span class="c0">Language: Typescript, Javascript, Nodejs, Golang, SQL</span></p>
+    <p class="c4"><span class="c0">Framework: Nest.js, Express.js</span></p>
+    <p class="c4"><span class="c0">Database: Postgres, MongoDB, Redis</span></p>
+    <p class="c4"><span class="c0">Other skills: Docker, Git, Linux, Design pattern, Design principle(solid, dry, kiss),
+            CQRS, testing, </span></p>
+    <p class="c4"><span class="c2">gRPC (familiar)</span></p>
 </body>
+
 </html>
