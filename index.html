@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDF Viewer</title>
+    <style>
+        .pdf-container {
+            width: 100%;
+            height: 100vh;
+            overflow: auto;
+        }
+    </style>
 </head>
 <body>
-    <iframe src="./pdf/milad.pdf" width="100%" height="800px">
-        <p>It appears you don't have a PDF plugin for this browser. You can still <a href="./pdf/milad.pdf">download the PDF</a>.</p>
-    </iframe>
+    <div class="pdf-container">
+        <object data="pdf/milad.pdf" type="application/pdf" width="100%" height="100%">
+            <p>It appears you don't have a PDF plugin for this browser. You can still <a href="pdf/milad.pdf">download the PDF</a>.</p>
+        </object>
+    </div>
 </body>
 </html>
