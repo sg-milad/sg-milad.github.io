@@ -4,7 +4,9 @@ body {
     position: relative;
     background: transparent;
 }
-
+.resume {
+    margin-left: 40px;
+}
 body::before {
     content: "";
     position: fixed;
@@ -377,6 +379,7 @@ section .container {
     font-family: "Poppins", sans-serif;
     color: #fff;
 }
+
 
 .section-title h2::after {
     content: "";
