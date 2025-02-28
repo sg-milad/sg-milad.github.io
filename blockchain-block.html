@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Block</title>
+    <style>
+        :root {
+            --bg-color: #0a0e17;
+            --text-color: #e6e6e6;
+            --accent-color: #3d7aff;
+            --block-bg: #1a1e2e;
+            --block-border: #2a3042;
+            --block-hover: #2d3555;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            padding: 2rem;
+        }
+
+        .blockchain-block {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            background-color: var(--block-bg);
+            border: 1px solid var(--block-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .blockchain-block:hover {
+            transform: scale(1.15);
+            background-color: var(--block-hover);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        .block-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(61, 122, 255, 0.2);
+            padding-bottom: 0.5rem;
+        }
+
+        .block-number {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .block-timestamp {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        .block-content {
+            margin-bottom: 1rem;
+        }
+
+        .block-data {
+            font-family: monospace;
+            font-size: 0.9rem;
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 0.5rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .block-data span {
+            display: inline-block;
+            animation: typing 8s steps(40) infinite;
+        }
+
+        .block-hash {
+            position: absolute;
+            bottom: 10px;
+            right: 15px;
+            font-family: monospace;
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            opacity: 0.7;
+        }
+
+        .block-connections {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .connection {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        .connection:nth-child(1) {
+            top: 20%;
+            left: -4px;
+        }
+
+        .connection:nth-child(2) {
+            top: 50%;
+            left: -4px;
+        }
+
+        .connection:nth-child(3) {
+            top: 80%;
+            left: -4px;
+        }
+
+        .connection:nth-child(4) {
+            top: 20%;
+            right: -4px;
+        }
+
+        .connection:nth-child(5) {
+            top: 50%;
+            right: -4px;
+        }
+
+        .connection:nth-child(6) {
+            top: 80%;
+            right: -4px;
+        }
+
+        .glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(61, 122, 255, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .blockchain-block:hover .glow {
+            opacity: 1;
+        }
+
+        @keyframes typing {
+
+            0%,
+            100% {
+                width: 0
+            }
+
+            50% {
+                width: 100%
+            }
+        }
+
+        /* Particle background */
+        #particle-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="particle-background"></canvas>
+
+    <div class="container">
+        <div class="blockchain-block">
+            <div class="block-header">
+                <div class="block-number">#1024</div>
+                <div class="block-timestamp">2025-06-15 14:32:17</div>
+            </div>
+            <div class="block-content">
+                <h3>Transaction Data</h3>
+                <div class="block-data">
+                    <span>0x7f8e2d1a3b5c9f0e4d6a8b2c7d9e5f3a1b0c8d7e...</span>
+                </div>
+                <p>Transactions: <strong>42</strong></p>
+                <p>Size: <strong>1.2 MB</strong></p>
+            </div>
+            <div class="block-hash">#0x8f2e7d9c4b3a6f1e</div>
+            <div class="block-connections">
+                <div class="connection"></div>
+                <div class="connection"></div>
+                <div class="connection"></div>
+                <div class="connection"></div>
+                <div class="connection"></div>
+                <div class="connection"></div>
+            </div>
+            <div class="glow"></div>
+        </div>
+    </div>
+
+    <script>
+        // Create particle background
+        function createParticleBackground() {
+            const canvas = document.getElementById('particle-background');
+            const ctx = canvas.getContext('2d');
+
+            // Set canvas dimensions
+            function resizeCanvas() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            // Particle properties
+            const particleCount = 50;
+            const particles = [];
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 2 + 0.5;
+                    this.speedX = Math.random() * 0.5 - 0.25;
+                    this.speedY = Math.random() * 0.5 - 0.25;
+                    this.color = '#3d7aff';
+                    this.opacity = Math.random() * 0.5 + 0.1;
+                }
+
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+
+                    // Wrap around edges
+                    if (this.x < 0) this.x = canvas.width;
+                    if (this.x > canvas.width) this.x = 0;
+                    if (this.y < 0) this.y = canvas.height;
+                    if (this.y > canvas.height) this.y = 0;
+                }
+
+                draw() {
+                    ctx.fillStyle = this.color;
+                    ctx.globalAlpha = this.opacity;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+            }
+
+            // Create particles
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+
+            // Animation loop
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Update and draw particles
+                particles.forEach(particle => {
+                    particle.update();
+                    particle.draw();
+                });
+
+                // Draw connections between nearby particles
+                ctx.globalAlpha = 0.1;
+                ctx.strokeStyle = '#3d7aff';
+                ctx.lineWidth = 0.5;
+
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < 100) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+        }
+
+        // Initialize particle background
+        createParticleBackground();
+
+        // Simulate hash calculation with typing effect
+        function simulateHashCalculation() {
+            const blockHash = document.querySelector('.block-hash');
+            const originalHash = blockHash.textContent;
+            const characters = '0123456789abcdef';
+
+            setInterval(() => {
+                const randomHash = '#' + Array.from({ length: originalHash.length - 1 }, () =>
+                    characters[Math.floor(Math.random() * characters.length)]
+                ).join('');
+
+                blockHash.textContent = randomHash;
+
+                setTimeout(() => {
+                    blockHash.textContent = originalHash;
+                }, 200);
+            }, 5000);
+        }
+
+        simulateHashCalculation();
+    </script>
+</body>
+
+</html>
