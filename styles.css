@@ -195,7 +195,8 @@ a {
 }
 
 .hero-description {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
+  line-height: 1.7;
   color: var(--text-secondary);
   margin-bottom: var(--spacing-lg);
   max-width: 500px;
