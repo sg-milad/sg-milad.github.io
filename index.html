@@ -1,236 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Milad Bachari - Blockchain Developer</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width" />
-  <link rel="stylesheet" href="styles.css" />
-  <script type="module" src="script.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Milad Bachari | Developer Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-  <div class="portfolio-container">
-    <header>
-      <h1>MILAD BACHARI</h1>
-      <h2>Back-end Developer | Nest.js | Blockchain</h2>
-
-      <div class="contact-info">
-        <p><i class="fas fa-envelope"></i> miladbachari14@gmail.com</p>
-        <p><i class="fas fa-phone"></i> +989054793672</p>
-        <p><i class="fas fa-globe"></i> sg-milad.github.io</p>
+  <div class="app-container">
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="logo">Portfolio</div>
+      <div class="nav-links">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </div>
+      <button class="connect-button">
+        <span class="connect-dot"></span>
+        Connect
+      </button>
+    </nav>
 
-      <div class="social-links">
-        <a href="https://linkedin.com/in/sg-milad" target="_blank" class="social-button">
-          <i class="fab fa-linkedin"></i>
-          <span>LinkedIn</span>
-        </a>
-        <a href="https://github.com/sg-milad" target="_blank" class="social-button">
-          <i class="fab fa-github"></i>
-          <span>GitHub</span>
-        </a>
-        <a href="https://drive.google.com/file/d/1i3uFT-f6gmgptDtThRhLLigAe0Hwy4Uy/view?usp=sharing" target="_blank"
-          class="social-button">
-          <i class="fas fa-file-alt"></i>
-          <span>Resume</span>
-        </a>
-      </div>
-    </header>
-
-    <div class="blockchain-container">
-      <div class="blockchain">
-        <div class="block" id="block1">
-          <div class="block-content">
-            <h3>Profile</h3>
-            <p>Backend Developer with 2+ years of experience designing scalable microservices (Nest.js, Docker) and
-              high-uptime systems. Proficient in CI/CD pipelines, message brokers (RabbitMQ/Kafka), and real-time
-              solutions. Partners with developers and stakeholders to deliver secure, performant architecture that
-              drives project success.</p>
-          </div>
-          <div class="block-hash">#0x8f2e</div>
-          <div class="connector"></div>
-        </div>
-
-        <div class="block" id="block2">
-          <div class="block-content">
-            <h3>Backend Engineer (Nest.js), invexa</h3>
-            <p><strong>2023 – 2024, Dubai</strong></p>
-            <ul>
-              <li>Developed an Admin Panel using microservices architecture, improving management efficiency and
-                enabling real-time monitoring of 10+ services.</li>
-              <li>Created 200+ comprehensive unit tests, increasing code coverage from 65% to 95% and reducing
-                post-deployment bugs by 30%.</li>
-              <li>Established CI/CD pipelines automating unit testing, reducing deployment time by 25%, and enabling 50+
-                weekly deployments with 99.8% reliability.</li>
-              <li>Containerized 12 microservices with Docker, cutting deployment time by 40% and enabling seamless
-                scalability for 10,000+ concurrent users.</li>
-              <li>Successfully migrated microservices architecture from Kafka to RabbitMQ enhancing performance and
-                reliability.</li>
-              <li>Engineered a NestJS bot to interact with BNB Smart Chain smart contracts, processing 500+ daily
-                transactions with 99.9% accuracy.</li>
-              <li>Engineered a real-time notification system using WebSockets, offering instant updates and elevating
-                user experience.</li>
-            </ul>
-          </div>
-          <div class="block-hash">#0x3a7b</div>
-          <div class="connector"></div>
-        </div>
-
-        <div class="block" id="block3">
-          <div class="block-content">
-            <h3>Backend Developer</h3>
-            <p><strong>2022 – 2023</strong></p>
-            <ul>
-              <li>Actively participated in code reviews, ensuring code quality, security, and adherence to coding
-                standards.</li>
-              <li>Assisted in debugging and resolving issues, ensuring the smooth functioning of applications, and
-                identifying opportunities for performance improvement.</li>
-              <li>Authored 15+ technical documentation guides, slashing onboarding time for new developers by 50%.</li>
-              <li>Optimized database queries, reducing API response times by 35% and enhancing scalability for 20,000+
-                monthly active users.</li>
-            </ul>
-          </div>
-          <div class="block-hash">#0x9c4d</div>
-          <div class="connector"></div>
-        </div>
-
-        <div class="block" id="block4">
-          <div class="block-content">
-            <h3>Skills</h3>
-            <div class="skills-grid">
-              <div class="skill-category">
-                <h4>Backend</h4>
-                <ul>
-                  <li>Node.js</li>
-                  <li>Nest.js</li>
-                  <li>Express.js</li>
-                  <li>Typescript</li>
-                  <li>Golang</li>
-                </ul>
-              </div>
-              <div class="skill-category">
-                <h4>Blockchain</h4>
-                <ul>
-                  <li>Solidity</li>
-                  <li>Web3</li>
-                  <li>Foundry</li>
-                  <li>Hardhat</li>
-                </ul>
-              </div>
-              <div class="skill-category">
-                <h4>Database</h4>
-                <ul>
-                  <li>SQL</li>
-                  <li>PostgreSQL</li>
-                  <li>MySQL</li>
-                  <li>MongoDB</li>
-                  <li>Redis</li>
-                </ul>
-              </div>
-              <div class="skill-category">
-                <h4>DevOps</h4>
-                <ul>
-                  <li>Docker</li>
-                  <li>Git</li>
-                  <li>Linux</li>
-                  <li>CI/CD</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="block-hash">#0x2e6f</div>
-          <div class="connector"></div>
-        </div>
-
-        <div class="block" id="block5">
-          <div class="block-content">
-            <h3>Architecture & Messaging</h3>
-            <div class="skills-grid">
-              <div class="skill-category">
-                <h4>Message Brokers</h4>
-                <ul>
-                  <li>Kafka</li>
-                  <li>RabbitMQ</li>
-                </ul>
-              </div>
-              <div class="skill-category">
-                <h4>Testing</h4>
-                <ul>
-                  <li>Unit Testing</li>
-                  <li>E2E Testing</li>
-                </ul>
-              </div>
-              <div class="skill-category">
-                <h4>Architectures</h4>
-                <ul>
-                  <li>CQRS</li>
-                  <li>Microservices</li>
-                </ul>
-              </div>
-              <div class="skill-category">
-                <h4>Other</h4>
-                <ul>
-                  <li>WebSockets</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="block-hash">#0x5d1c</div>
-          <div class="connector"></div>
-        </div>
-
-        <div class="block" id="block6">
-          <div class="block-content">
-            <h3>Projects</h3>
-            <div class="project">
-              <h4>Ton-payment-system</h4>
-              <p>The TON Crypto Payment System is a flexible solution that allows users to make payments using the TON
-                (The Open Network) cryptocurrency. Key features of this project include:</p>
-              <ul>
-                <li>Customizable Deposits: Users can deposit any desired amount for their transactions.</li>
-                <li>Dynamic Wallet Generation: A new wallet address is randomly generated for each user.</li>
-                <li>Automatic Fund Consolidation: Funds are automatically transferred to a main wallet.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="block-hash">#0x7b3a</div>
-          <div class="connector"></div>
-        </div>
-
-        <div class="block" id="block7">
-          <div class="block-content">
-            <h3>Education & Certificates</h3>
-            <div class="education">
-              <h4>Blockchain, Cyfrin Updraft</h4>
-              <p>2024</p>
-            </div>
-            <div class="certificates">
-              <h4>Certificates</h4>
-              <ul>
-                <li>OWASP API Security Top 10</li>
-                <li>Securing API Servers</li>
-              </ul>
-            </div>
-            <div class="languages">
-              <h4>Languages</h4>
-              <ul>
-                <li>English — Proficient (B2)</li>
-                <li>Arabic — Native/Bilingual</li>
-                <li>Persian — Native/Bilingual</li>
-              </ul>
-            </div>
-          </div>
-          <div class="block-hash">#0x1f8e</div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <div class="gradient-text">Hello, I'm</div>
+        <h1>Milad Bachari</h1>
+        <h2>Back-end Developer | Nest.js | Web3</h2>
+        <p class="hero-description">
+          I build scalable microservices with a focus on clean code, performance, and high-uptime systems.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="primary-button">View Projects</a>
+          <a href="resume.html" class="secondary-button">View Resume</a>
+          <a href="https://drive.google.com/file/d/YOUR_GOOGLE_DRIVE_FILE_ID/view" target="_blank" class="secondary-button">
+            <i class="fab fa-google-drive"></i> Resume on Drive
+          </a>
         </div>
       </div>
-    </div>
+      <div class="hero-visual">
+        <div class="gradient-sphere"></div>
+      </div>
+    </section>
 
-    <footer>
-      <p>© 2025 Milad Bachari - Blockchain & Backend Developer</p>
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="section-header">
+        <h2>About Me</h2>
+      </div>
+      <div class="swap-panel">
+        <div class="panel-content">
+          <p>
+            I'm a passionate Backend Developer with 2+ years of experience designing scalable microservices (Nest.js, Docker)
+            and high-uptime systems. Proficient in CI/CD pipelines, message brokers (RabbitMQ/Kafka), and real-time solutions.
+          </p>
+          <p>
+            My approach combines technical excellence with creative problem-solving, 
+            resulting in applications that are not only functional but also secure and performant.
+            I partner with developers and stakeholders to deliver architecture that drives project success.
+          </p>
+          <div class="stats-container">
+            <div class="stat-item">
+              <span class="stat-value">2+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">10+</span>
+              <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">200+</span>
+              <span class="stat-label">Unit Tests Written</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <div class="section-header">
+        <h2>Projects</h2>
+        <p>A selection of my recent work</p>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-icon">
+              <i class="fas fa-wallet"></i>
+            </div>
+            <h3>TON Payment System</h3>
+          </div>
+          <p class="project-description">
+            A flexible crypto payment solution that allows users to make payments using the TON cryptocurrency with customizable deposits.
+          </p>
+          <div class="token-list">
+            <span class="token">Node.js</span>
+            <span class="token">Web3</span>
+            <span class="token">Blockchain</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+            <a href="https://github.com/sg-milad" class="project-link">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-icon">
+              <i class="fas fa-server"></i>
+            </div>
+            <h3>Admin Panel Microservices</h3>
+          </div>
+          <p class="project-description">
+            A comprehensive admin panel built with microservices architecture, enabling real-time monitoring of multiple services.
+          </p>
+          <div class="token-list">
+            <span class="token">Nest.js</span>
+            <span class="token">Microservices</span>
+            <span class="token">Docker</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+            <a href="https://github.com/sg-milad" class="project-link">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-header">
+            <div class="project-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3>BNB Smart Chain Bot</h3>
+          </div>
+          <p class="project-description">
+            A NestJS bot engineered to interact with BNB Smart Chain smart contracts, processing daily transactions with high accuracy.
+          </p>
+          <div class="token-list">
+            <span class="token">Nest.js</span>
+            <span class="token">Smart Contracts</span>
+            <span class="token">Blockchain</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+            <a href="https://github.com/sg-milad" class="project-link">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <div class="section-header">
+        <h2>Skills & Technologies</h2>
+      </div>
+      <div class="swap-panel">
+        <div class="panel-content">
+          <div class="skills-categories">
+            <div class="skill-category">
+              <h3>Languages & Frameworks</h3>
+              <div class="tokens-container">
+                <div class="token-badge">
+                  <span class="token-icon">
+                    <i class="fab fa-node-js"></i>
+                  </span>
+                  <span class="token-name">Node.js</span>
+                </div>
+                <div class="token-badge">
+                  <span class="token-icon">
+                    <i class="fas fa-server"></i>
+                  </span>
+                  <span class="token-name">Nest.js</span>
+                </div>
+                <div class="token-badge">
+                  <span class="token-icon">
+                    <i class="fab fa-js"></i>
+                  </span>
+                  <span class="token-name">TypeScript</span>
+                </div>
+                <div class="token-badge">
+                  <span class="token-icon">
+                    <i class="fas fa-code"></i>
+                  </span>
+                  <span class="token-name">Golang</span>
+                </div>
+                <div class="token-badge">
+                  <span class="token-icon">
+                    <i class="fab fa-ethereum"></i>
+                  </span>
+                  <span class="token-name">Solidity</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3>Databases & Storage</h3>
+              <div class="tokens-container">
+                <div class="token-badge">
+                  <span class="token-icon">
+                    <i class="fas fa-database"></i>
+                  </span>
+                  <span class="token-name">PostgreSQL</span>
+                </div>
+                <div class="token-badge">
+                  <span class="token-icon">
+                    <i class="fas fa-database"></i>
+                  </span>
+                  <span class="token-name">MySQL</span>
+                </div>
+                <div class="token-badge">
+                  <span class="token-icon">
+                    <i class="fas fa-database"></i>
+                  </span>
+                  <span class="token-name">MongoDB</span>
+                </div>
+                <div class="token-badge">
+                  <span class="token-icon">
+                    <i class="fas fa-bolt"></i>
+                  </span>
+                  <span class="token-name">Redis</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3>DevOps & Tools</h3>
+              <div class="tokens-container">
+                <div class="token-badge">
+                  <span class="token-icon">
+                    <i class="fab fa-docker"></i>
+                  </span>
+                  <span class="token-name">Docker</span>
+                </div>
+                <div class="token-badge">
+                  <span class="token-icon">
+                    <i class="fab fa-git-alt"></i>
+                  </span>
+                  <span class="token-name">Git</span>
+                </div>
+                <div class="token-badge">
+                  <span class="token-icon">
+                    <i class="fab fa-linux"></i>
+                  </span>
+                  <span class="token-name">Linux</span>
+                </div>
+                <div class="token-badge">
+                  <span class="token-icon">
+                    <i class="fas fa-cogs"></i>
+                  </span>
+                  <span class="token-name">CI/CD</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <h3>Architecture & Communication</h3>
+              <div class="tokens-container">
+                <div class="token-badge">
+                  <span class="token-icon">
+                    <i class="fas fa-network-wired"></i>
+                  </span>
+                  <span class="token-name">Microservices</span>
+                </div>
+                <div class="token-badge">
+                  <span class="token-icon">
+                    <i class="fas fa-exchange-alt"></i>
+                  </span>
+                  <span class="token-name">CQRS</span>
+                </div>
+                <div class="token-badge">
+                  <span class="token-icon">
+                    <i class="fas fa-comments"></i>
+                  </span>
+                  <span class="token-name">RabbitMQ</span>
+                </div>
+                <div class="token-badge">
+                  <span class="token-icon">
+                    <i class="fas fa-stream"></i>
+                  </span>
+                  <span class="token-name">Kafka</span>
+                </div>
+                <div class="token-badge">
+                  <span class="token-icon">
+                    <i class="fas fa-plug"></i>
+                  </span>
+                  <span class="token-name">WebSocket</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="section-header">
+        <h2>Get In Touch</h2>
+        <p>Let's discuss your project</p>
+      </div>
+      <div class="swap-panel">
+        <div class="panel-content">
+          <div class="contact-container">
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>miladbachari14@gmail.com</span>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+989054793672</span>
+              </div>
+              <div class="social-links">
+                <a href="https://github.com/sg-milad" class="social-link" target="_blank">
+                  <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/sg-milad" class="social-link" target="_blank">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-link">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-link">
+                  <i class="fab fa-dribbble"></i>
+                </a>
+              </div>
+            </div>
+            <form class="contact-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Your email">
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" rows="4" placeholder="Your message"></textarea>
+              </div>
+              <button type="submit" class="primary-button">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="section">
+      <div class="section-header">
+        <h2>Resume</h2>
+        <p>My professional background and experience</p>
+      </div>
+      <div class="resume-buttons">
+        <a href="resume.html" class="primary-button">View Full Resume</a>
+        <a href="https://drive.google.com/file/d/YOUR_GOOGLE_DRIVE_FILE_ID/view" target="_blank" class="secondary-button">
+          <i class="fab fa-google-drive"></i> View on Google Drive
+        </a>
+        <a href="https://drive.google.com/uc?export=download&id=YOUR_GOOGLE_DRIVE_FILE_ID" class="secondary-button">
+          <i class="fas fa-download"></i> Download PDF
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>© 2025 Milad Bachari. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
     </footer>
   </div>
-</body>
 
+  <!-- Background Elements -->
+  <div class="background-blur top-left"></div>
+  <div class="background-blur bottom-right"></div>
+
+  <script src="script.js"></script>
+</body>
 </html>

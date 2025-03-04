@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blockchain Block Pattern</title>
+  <style>
+    :root {
+      --bg-color: #0a0e17;
+      --text-color: #e6e6e6;
+      --accent-color: #3d7aff;
+      --block-bg: #1a1e2e;
+      --block-border: #2a3042;
+      --block-hover: #2d3555;
+      --connection-color: #ff8c00;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      width: 500px;
+      height: 500px;
+    }
+
+    .block {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: var(--block-bg);
+      border: 1px solid var(--block-border);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      z-index: 2;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      transform-style: preserve-3d;
+      perspective: 1000px;
+    }
+
+    .block:hover {
+      transform: scale(1.1) translateZ(10px);
+      background-color: var(--block-hover);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .block-top {
+      top: 50px;
+      left: 200px;
+    }
+
+    .block-right {
+      top: 200px;
+      right: 50px;
+    }
+
+    .block-bottom {
+      bottom: 50px;
+      left: 200px;
+    }
+
+    .block-left {
+      top: 200px;
+      left: 50px;
+    }
+
+    .block-number {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--accent-color);
+    }
+
+    .block-hash {
+      font-family: monospace;
+      font-size: 0.7rem;
+      color: var(--accent-color);
+      opacity: 0.7;
+      margin-top: 5px;
+    }
+
+    .connection {
+      position: absolute;
+      background-color: var(--connection-color);
+      z-index: 1;
+    }
+
+    .connection-horizontal {
+      height: 10px;
+      width: 150px;
+    }
+
+    .connection-vertical {
+      width: 10px;
+      height: 150px;
+    }
+
+    /* Top to Right connection */
+    .connection-top-right {
+      top: 95px;
+      left: 300px;
+    }
+
+    /* Right to Bottom connection */
+    .connection-right-bottom {
+      top: 300px;
+      left: 245px;
+      transform: rotate(90deg);
+    }
+
+    /* Bottom to Left connection */
+    .connection-bottom-left {
+      top: 295px;
+      left: 100px;
+    }
+
+    /* Left to Top connection */
+    .connection-left-top {
+      top: 100px;
+      left: 95px;
+      transform: rotate(90deg);
+    }
+
+    /* 3D effects for blocks */
+    .block-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backface-visibility: hidden;
+    }
+
+    .block-front {
+      transform: translateZ(10px);
+      background-color: var(--block-bg);
+      border-radius: 8px;
+    }
+
+    .block-right-face {
+      transform: rotateY(90deg) translateZ(50px);
+      width: 20px;
+      right: -10px;
+      background-color: rgba(76, 130, 251, 0.3);
+      border-radius: 0 8px 8px 0;
+    }
+
+    .block-left-face {
+      transform: rotateY(-90deg) translateZ(50px);
+      width: 20px;
+      left: -10px;
+      background-color: rgba(255, 140, 0, 0.3);
+      border-radius: 8px 0 0 8px;
+    }
+
+    .block-top-face {
+      transform: rotateX(90deg) translateZ(50px);
+      height: 20px;
+      top: -10px;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 8px 8px 0 0;
+    }
+
+    .block-bottom-face {
+      transform: rotateX(-90deg) translateZ(50px);
+      height: 20px;
+      bottom: -10px;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 0 0 8px 8px;
+    }
+
+    /* Particle background */
+    #particle-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    /* Animation for connections */
+    @keyframes pulse {
+      0% {
+        opacity: 0.5;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0.5;
+      }
+    }
+
+    .connection {
+      animation: pulse 2s infinite;
+    }
+
+    /* Animation for block hash */
+    @keyframes blink {
+      0%, 100% {
+        opacity: 0.7;
+      }
+      50% {
+        opacity: 0.3;
+      }
+    }
+
+    .block-hash {
+      animation: blink 3s infinite;
+    }
+
+    /* Title */
+    .title {
+      position: absolute;
+      top: 20px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--text-color);
+    }
+
+    /* Controls */
+    .controls {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .control-button {
+      background-color: var(--block-bg);
+      border: 1px solid var(--block-border);
+      color: var(--text-color);
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .control-button:hover {
+      background-color: var(--block-hover);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <canvas id="particle-background"></canvas>
+  
+  <div class="container">
+    <h1 class="title">Blockchain Block Pattern</h1>
+    
+    <!-- Top Block -->
+    <div class="block block-top">
+      <div class="block-face block-front">
+        <div class="block-content">
+          <div class="block-number">Block #1</div>
+          <div class="block-hash">0x8f2e7d9c4b3a</div>
+        </div>
+      </div>
+      <div class="block-face block-right-face"></div>
+      <div class="block-face block-left-face"></div>
+      <div class="block-face block-top-face"></div>
+      <div class="block-face block-bottom-face"></div>
+    </div>
+    
+    <!-- Right Block -->
+    <div class="block block-right">
+      <div class="block-face block-front">
+        <div class="block-content">
+          <div class="block-number">Block #2</div>
+          <div class="block-hash">0x3a4b7c9d2e5f</div>
+        </div>
+      </div>
+      <div class="block-face block-right-face"></div>
+      <div class="block-face block-left-face"></div>
+      <div class="block-face block-top-face"></div>
+      <div class="block-face block-bottom-face"></div>
+    </div>
+    
+    <!-- Bottom Block -->
+    <div class="block block-bottom">
+      <div class="block-face block-front">
+        <div class="block-content">
+          <div class="block-number">Block #3</div>
+          <div class="block-hash">0x5e7f9a2b4c6d</div>
+        </div>
+      </div>
+      <div class="block-face block-right-face"></div>
+      <div class="block-face block-left-face"></div>
+      <div class="block-face block-top-face"></div>
+      <div class="block-face block-bottom-face"></div>
+    </div>
+    
+    <!-- Left Block -->
+    <div class="block block-left">
+      <div class="block-face block-front">
+        <div class="block-content">
+          <div class="block-number">Block #4</div>
+          <div class="block-hash">0x1d2e3f4a5b6c</div>
+        </div>
+      </div>
+      <div class="block-face block-right-face"></div>
+      <div class="block-face block-left-face"></div>
+      <div class="block-face block-top-face"></div>
+      <div class="block-face block-bottom-face"></div>
+    </div>
+    
+    <!-- Connections -->
+    <div class="connection connection-horizontal connection-top-right"></div>
+    <div class="connection connection-vertical connection-right-bottom"></div>
+    <div class="connection connection-horizontal connection-bottom-left"></div>
+    <div class="connection connection-vertical connection-left-top"></div>
+    
+    <div class="controls">
+      <button class="control-button" id="rotate-button">Rotate Chain</button>
+      <button class="control-button" id="add-block">Add Block</button>
+    </div>
+  </div>
+
+  <script>
+    // Create particle background
+    function createParticleBackground() {
+      const canvas = document.getElementById('particle-background');
+      const ctx = canvas.getContext('2d');
+      
+      // Set canvas dimensions
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      
+      window.addEventListener('resize', resizeCanvas);
+      resizeCanvas();
+      
+      // Particle properties
+      const particleCount = 50;
+      const particles = [];
+      
+      class Particle {
+        constructor() {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 2 + 0.5;
+          this.speedX = Math.random() * 0.5 - 0.25;
+          this.speedY = Math.random() * 0.5 - 0.25;
+          this.color = '#3d7aff';
+          this.opacity = Math.random() * 0.5 + 0.1;
+        }
+        
+        update() {
+          this.x += this.speedX;
+          this.y += this.speedY;
+          
+          // Wrap around edges
+          if (this.x < 0) this.x = canvas.width;
+          if (this.x > canvas.width) this.x = 0;
+          if (this.y < 0) this.y = canvas.height;
+          if (this.y > canvas.height) this.y = 0;
+        }
+        
+        draw() {
+          ctx.fillStyle = this.color;
+          ctx.globalAlpha = this.opacity;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+      
+      // Create particles
+      for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+      }
+      
+      // Animation loop
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Update and draw particles
+        particles.forEach(particle => {
+          particle.update();
+          particle.draw();
+        });
+        
+        // Draw connections between nearby particles
+        ctx.globalAlpha = 0.1;
+        ctx.strokeStyle = '#3d7aff';
+        ctx.lineWidth = 0.5;
+        
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance < 100) {
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+        
+        requestAnimationFrame(animate);
+      }
+      
+      animate();
+    }
+
+    // Initialize particle background
+    createParticleBackground();
+
+    // Simulate hash calculation with blinking effect
+    function simulateHashCalculation() {
+      const blockHashes = document.querySelectorAll('.block-hash');
+      const characters = '0123456789abcdef';
+      
+      blockHashes.forEach(blockHash => {
+        const originalHash = blockHash.textContent;
+        
+        setInterval(() => {
+          const randomHash = '0x' + Array.from({length: 12}, () => 
+            characters[Math.floor(Math.random() * characters.length)]
+          ).join('');
+          
+          blockHash.textContent = randomHash;
+          
+          setTimeout(() => {
+            blockHash.textContent = originalHash;
+          }, 200);
+        }, 5000 + Math.random() * 5000);
+      });
+    }
+
+    // Initialize hash calculation
+    simulateHashCalculation();
+
+    // Add rotation functionality
+    document.getElementById('rotate-button').addEventListener('click', () => {
+      const container = document.querySelector('.container');
+      container.style.transition = 'transform 2s ease';
+      
+      // Get current rotation
+      const currentTransform = container.style.transform || '';
+      const currentRotation = currentTransform.includes('rotateY') 
+        ? parseInt(currentTransform.match(/rotateY\((\d+)deg\)/)[1], 10) 
+        : 0;
+      
+      // Rotate by 90 degrees
+      const newRotation = (currentRotation + 90) % 360;
+      container.style.transform = `rotateY(${newRotation}deg)`;
+    });
+
+    // Add block functionality
+    document.getElementById('add-block').addEventListener('click', () => {
+      // Flash the connections to simulate data transfer
+      const connections = document.querySelectorAll('.connection');
+      connections.forEach(connection => {
+        connection.style.backgroundColor = '#ffffff';
+        connection.style.boxShadow = '0 0 10px #ffffff';
+        
+        setTimeout(() => {
+          connection.style.backgroundColor = '';
+          connection.style.boxShadow = '';
+        }, 500);
+      });
+      
+      // Update block numbers
+      const blockNumbers = document.querySelectorAll('.block-number');
+      blockNumbers.forEach(blockNumber => {
+        const currentNumber = parseInt(blockNumber.textContent.match(/\d+/)[0], 10);
+        blockNumber.textContent = `Block #${currentNumber + 1}`;
+      });
+      
+      // Generate new hashes
+      const blockHashes = document.querySelectorAll('.block-hash');
+      const characters = '0123456789abcdef';
+      
+      blockHashes.forEach(blockHash => {
+        const randomHash = '0x' + Array.from({length: 12}, () => 
+          characters[Math.floor(Math.random() * characters.length)]
+        ).join('');
+        
+        blockHash.textContent = randomHash;
+      });
+    });
+  </script>
+</body>
+</html>

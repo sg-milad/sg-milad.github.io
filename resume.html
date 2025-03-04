@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Milad Bachari | Resume</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .resume-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: var(--spacing-xl);
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--border-radius-lg);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .resume-header {
+      text-align: center;
+      margin-bottom: var(--spacing-xl);
+    }
+    
+    .resume-name {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: var(--spacing-xs);
+    }
+    
+    .resume-title {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .resume-contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .resume-contact-item {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      color: var(--text-secondary);
+    }
+    
+    .resume-contact-item i {
+      color: var(--accent-primary);
+    }
+    
+    .resume-section {
+      margin-bottom: var(--spacing-xl);
+    }
+    
+    .resume-section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: var(--spacing-md);
+      color: var(--accent-primary);
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: var(--spacing-xs);
+    }
+    
+    .experience-item {
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .experience-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .experience-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    
+    .experience-company {
+      font-weight: 500;
+      color: var(--accent-secondary);
+    }
+    
+    .experience-date {
+      color: var(--text-secondary);
+    }
+    
+    .experience-location {
+      color: var(--text-secondary);
+      font-style: italic;
+    }
+    
+    .experience-description ul {
+      list-style-type: disc;
+      padding-left: var(--spacing-lg);
+      color: var(--text-secondary);
+    }
+    
+    .experience-description li {
+      margin-bottom: var(--spacing-xs);
+    }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: var(--spacing-md);
+    }
+    
+    .skill-category {
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .skill-category-title {
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-xs);
+    }
+    
+    .skill-list {
+      color: var(--text-secondary);
+    }
+    
+    .project-item {
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .project-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-xs);
+    }
+    
+    .project-description {
+      color: var(--text-secondary);
+      margin-bottom: var(--spacing-xs);
+    }
+    
+    .project-features {
+      padding-left: var(--spacing-lg);
+      color: var(--text-secondary);
+    }
+    
+    .back-button {
+      display: inline-block;
+      margin-top: var(--spacing-lg);
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      color: var(--text-primary);
+      padding: var(--spacing-sm) var(--spacing-md);
+      border-radius: var(--border-radius-sm);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .back-button:hover {
+      background-color: var(--hover-color);
+      transform: translateY(-2px);
+    }
+    
+    @media (max-width: 768px) {
+      .experience-header {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+      }
+      
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="logo">Portfolio</div>
+      <div class="nav-links">
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#projects" class="nav-link">Projects</a>
+        <a href="index.html#skills" class="nav-link">Skills</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </div>
+      <a href="index.html" class="connect-button">
+        <span class="connect-dot"></span>
+        Back to Home
+      </a>
+    </nav>
+
+    <div class="resume-container">
+      <div class="resume-header">
+        <h1 class="resume-name">MILAD BACHARI</h1>
+        <p class="resume-title">Back-end developer | Nest.js | web3</p>
+        <div class="resume-contact">
+          <div class="resume-contact-item">
+            <i class="fas fa-envelope"></i>
+            <span>miladbachari14@gmail.com</span>
+          </div>
+          <div class="resume-contact-item">
+            <i class="fas fa-phone"></i>
+            <span>+989054793672</span>
+          </div>
+          <div class="resume-contact-item">
+            <i class="fas fa-globe"></i>
+            <a href="https://sg-milad.github.io" target="_blank">sg-milad.github.io</a>
+          </div>
+          <div class="resume-contact-item">
+            <i class="fab fa-linkedin"></i>
+            <a href="https://linkedin.com/in/sg-milad" target="_blank">linkedin.com/in/sg-milad</a>
+          </div>
+          <div class="resume-contact-item">
+            <i class="fab fa-github"></i>
+            <a href="https://github.com/sg-milad" target="_blank">github.com/sg-milad</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <h2 class="resume-section-title">Profile</h2>
+        <p>Backend Developer with 2+ years of experience designing scalable microservices (Nest.js, Docker) and high-uptime systems. Proficient in CI/CD pipelines, message brokers (RabbitMQ/Kafka), and real-time solutions. Partners with developers and stakeholders to deliver secure, performant architecture that drives project success.</p>
+      </div>
+
+      <div class="resume-section">
+        <h2 class="resume-section-title">Professional Experience</h2>
+        
+        <div class="experience-item">
+          <div class="experience-header">
+            <div>
+              <h3 class="experience-title">Backend Engineer (Nest.js)</h3>
+              <div class="experience-company">invexa</div>
+            </div>
+            <div>
+              <div class="experience-date">2023 – 2024</div>
+              <div class="experience-location">Dubai</div>
+            </div>
+          </div>
+          <div class="experience-description">
+            <ul>
+              <li>Developed an Admin Panel using microservices architecture, improving management efficiency and enabling real-time monitoring of 10+ services.</li>
+              <li>Created 200+ comprehensive unit tests, increasing code coverage from 65% to 95% and reducing post-deployment bugs by 30%.</li>
+              <li>Established CI/CD pipelines automating unit testing, reducing deployment time by 25%, and enabling 50+ weekly deployments with 99.8% reliability.</li>
+              <li>Containerized 12 microservices with Docker, cutting deployment time by 40% and enabling seamless scalability for 10,000+ concurrent users.</li>
+              <li>Successfully migrated microservices architecture from Kafka to RabbitMQ enhancing performance and reliability.</li>
+              <li>Engineered a NestJS bot to interact with BNB Smart Chain smart contracts, processing 500+ daily transactions with 99.9% accuracy.</li>
+              <li>Engineered a real-time notification system using WebSockets, offering instant updates and elevating user experience.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="experience-item">
+          <div class="experience-header">
+            <div>
+              <h3 class="experience-title">Backend Developer</h3>
+            </div>
+            <div>
+              <div class="experience-date">2022 – 2023</div>
+            </div>
+          </div>
+          <div class="experience-description">
+            <ul>
+              <li>Actively participated in code reviews, ensuring code quality, security, and adherence to coding standards.</li>
+              <li>Assisted in debugging and resolving issues, ensuring the smooth functioning of applications, and identifying opportunities for performance improvement.</li>
+              <li>Authored 15+ technical documentation guides, slashing onboarding time for new developers by 50%.</li>
+              <li>Optimized database queries, reducing API response times by 35% and enhancing scalability for 20,000+ monthly active users.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <h2 class="resume-section-title">Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h3 class="skill-category-title">Languages & Frameworks</h3>
+            <div class="skill-list">
+              Node.js, Nest.js, Express.js, TypeScript, Golang, Solidity
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3 class="skill-category-title">Databases</h3>
+            <div class="skill-list">
+              SQL, PostgreSQL, MySQL, NoSQL, MongoDB, Redis
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3 class="skill-category-title">DevOps & Tools</h3>
+            <div class="skill-list">
+              Docker, Git, Linux, CI/CD
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3 class="skill-category-title">Communication</h3>
+            <div class="skill-list">
+              Message Broker, Kafka, RabbitMQ, WebSocket
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3 class="skill-category-title">Testing</h3>
+            <div class="skill-list">
+              Unit Test, E2E
+            </div>
+          </div>
+          <div class="skill-category">
+            <h3 class="skill-category-title">Architectures</h3>
+            <div class="skill-list">
+              CQRS, Microservice Architecture, Web3
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <h2 class="resume-section-title">Certificates</h2>
+        <ul>
+          <li>OWASP API Security Top 10</li>
+          <li>Securing API Servers</li>
+        </ul>
+      </div>
+
+      <div class="resume-section">
+        <h2 class="resume-section-title">Projects</h2>
+        <div class="project-item">
+          <h3 class="project-title">Ton-payment-system</h3>
+          <p class="project-description">The TON Crypto Payment System is a flexible solution that allows users to make payments using the TON (The Open Network) cryptocurrency. Key features of this project include:</p>
+          <ul class="project-features">
+            <li>Customizable Deposits: Users can deposit any desired amount for their transactions.</li>
+            <li>Dynamic Wallet Generation: A new wallet address is randomly generated for each user.</li>
+            <li>Automatic Fund Consolidation: Funds are automatically transferred to a main wallet.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="resume-section">
+        <h2 class="resume-section-title">Languages</h2>
+        <ul>
+          <li>English — Proficient (B2)</li>
+          <li>Arabic — Native/Bilingual</li>
+        </ul>
+      </div>
+
+      <div class="resume-section">
+        <h2 class="resume-section-title">Education</h2>
+        <div class="experience-item">
+          <div class="experience-header">
+            <div>
+              <h3 class="experience-title">Blockchain</h3>
+              <div class="experience-company">Cyfrin Updraft</div>
+            </div>
+            <div>
+              <div class="experience-date">2024</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i> Back to Portfolio
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p>© 2025 Milad Bachari. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Background Elements -->
+  <div class="background-blur top-left"></div>
+  <div class="background-blur bottom-right"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
