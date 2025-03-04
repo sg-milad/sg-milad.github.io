@@ -127,13 +127,13 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: var(--spacing-md) 0;
+  padding: 1.5rem 2rem;
   margin-bottom: var(--spacing-xl);
 }
 
 .logo {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
   -webkit-background-clip: text;
   background-clip: text;
@@ -149,39 +149,12 @@ a {
   color: var(--text-secondary);
   transition: color 0.3s ease;
   font-weight: 500;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
 }
 
 .nav-link:hover {
   color: var(--text-primary);
-}
-
-.connect-button {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-xs);
-  background-color: transparent;
-  border: 1px solid var(--card-border);
-  color: var(--text-primary);
-  padding: var(--spacing-xs) var(--spacing-md);
-  border-radius: var(--border-radius-sm);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: var(--font-family);
-  font-size: 0.9rem;
-}
-
-.connect-button:hover {
-  background-color: var(--hover-color);
-  transform: translateY(-2px);
-}
-
-.connect-dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  background-color: var(--text-secondary);
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
 }
 
 /* Hero Section */
@@ -717,4 +690,8 @@ a {
     gap: var(--spacing-md);
     text-align: center;
   }
+}
+
+.navbar .logo, .nav-links .nav-link {
+    font-size: 1.2rem;
 }
