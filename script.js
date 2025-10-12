@@ -1,40 +1,55 @@
-document.addEventListener("DOMContentLoaded", () => {
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navLinks.classList.toggle('active');
+});
+
+document.querySelectorAll('.nav-link').forEach((link) => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+  });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
   // Smooth scrolling for navigation links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
+    anchor.addEventListener('click', function (e) {
       e.preventDefault();
 
-      const targetId = this.getAttribute("href");
+      const targetId = this.getAttribute('href');
       const targetElement = document.querySelector(targetId);
 
       if (targetElement) {
         window.scrollTo({
           top: targetElement.offsetTop - 80,
-          behavior: "smooth",
+          behavior: 'smooth',
         });
       }
     });
   });
 
   // Connect button interaction
-  const connectButton = document.querySelector(".connect-button");
+  const connectButton = document.querySelector('.connect-button');
   if (connectButton) {
-    connectButton.addEventListener("click", () => {
-      const connectDot = connectButton.querySelector(".connect-dot");
+    connectButton.addEventListener('click', () => {
+      const connectDot = connectButton.querySelector('.connect-dot');
       const isConnected =
-        connectDot.style.backgroundColor === "var(--success-color)" ||
-        getComputedStyle(connectDot).backgroundColor === "rgb(30, 185, 128)";
+        connectDot.style.backgroundColor === 'var(--success-color)' ||
+        getComputedStyle(connectDot).backgroundColor === 'rgb(30, 185, 128)';
 
       if (isConnected) {
-        connectDot.style.backgroundColor = "var(--error-color)";
+        connectDot.style.backgroundColor = 'var(--error-color)';
         connectButton.innerHTML =
           '<span class="connect-dot"></span> Disconnected';
         setTimeout(() => {
-          connectDot.style.backgroundColor = "var(--text-secondary)";
+          connectDot.style.backgroundColor = 'var(--text-secondary)';
         }, 1500);
       } else {
         connectButton.innerHTML = '<span class="connect-dot"></span> Connected';
-        connectDot.style.backgroundColor = "var(--success-color)";
+        connectDot.style.backgroundColor = 'var(--success-color)';
       }
     });
   }
@@ -42,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Animate elements on scroll
   const animateOnScroll = () => {
     const elements = document.querySelectorAll(
-      ".swap-panel, .project-card, .token-badge"
+      '.swap-panel, .project-card, .token-badge'
     );
 
     elements.forEach((element) => {
@@ -50,8 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const screenPosition = window.innerHeight / 1.2;
 
       if (elementPosition < screenPosition) {
-        element.style.opacity = "1";
-        element.style.transform = "translateY(0)";
+        element.style.opacity = '1';
+        element.style.transform = 'translateY(0)';
       }
     });
   };
@@ -59,13 +74,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Set initial state for animation
   const setInitialAnimationState = () => {
     const elements = document.querySelectorAll(
-      ".swap-panel, .project-card, .token-badge"
+      '.swap-panel, .project-card, .token-badge'
     );
 
     elements.forEach((element) => {
-      element.style.opacity = "0";
-      element.style.transform = "translateY(20px)";
-      element.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+      element.style.opacity = '0';
+      element.style.transform = 'translateY(20px)';
+      element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     });
   };
 
@@ -74,22 +89,22 @@ document.addEventListener("DOMContentLoaded", () => {
   animateOnScroll(); // Run once on load
 
   // Add scroll event listener
-  window.addEventListener("scroll", animateOnScroll);
+  window.addEventListener('scroll', animateOnScroll);
 
   // Form submission handling
-  const contactForm = document.querySelector(".contact-form");
+  const contactForm = document.querySelector('.contact-form');
   if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
+    contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
       // Get form values
-      const name = document.getElementById("name").value;
-      const email = document.getElementById("email").value;
-      const message = document.getElementById("message").value;
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
 
       // Simple validation
       if (!name || !email || !message) {
-        alert("Please fill in all fields");
+        alert('Please fill in all fields');
         return;
       }
 
@@ -97,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const submitButton = contactForm.querySelector('button[type="submit"]');
       const originalText = submitButton.textContent;
 
-      submitButton.textContent = "Sending...";
+      submitButton.textContent = 'Sending...';
       submitButton.disabled = true;
 
       // Simulate API call
@@ -106,14 +121,14 @@ document.addEventListener("DOMContentLoaded", () => {
         contactForm.reset();
 
         // Show success message
-        submitButton.textContent = "Message Sent!";
-        submitButton.style.backgroundColor = "var(--success-color)";
+        submitButton.textContent = 'Message Sent!';
+        submitButton.style.backgroundColor = 'var(--success-color)';
 
         // Reset button after delay
         setTimeout(() => {
           submitButton.textContent = originalText;
           submitButton.disabled = false;
-          submitButton.style.backgroundColor = "";
+          submitButton.style.backgroundColor = '';
         }, 3000);
       }, 1500);
     });
@@ -121,18 +136,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Create interactive background particles
   const createParticles = () => {
-    const canvas = document.createElement("canvas");
-    canvas.id = "particles-canvas";
-    canvas.style.position = "fixed";
-    canvas.style.top = "0";
-    canvas.style.left = "0";
-    canvas.style.width = "100%";
-    canvas.style.height = "100%";
-    canvas.style.pointerEvents = "none";
-    canvas.style.zIndex = "-2";
+    const canvas = document.createElement('canvas');
+    canvas.id = 'particles-canvas';
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '-2';
     document.body.appendChild(canvas);
 
-    const ctx = canvas.getContext("2d");
+    const ctx = canvas.getContext('2d');
     let width = window.innerWidth;
     let height = window.innerHeight;
 
@@ -144,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
       canvas.height = height;
     };
 
-    window.addEventListener("resize", resizeCanvas);
+    window.addEventListener('resize', resizeCanvas);
     resizeCanvas();
 
     // Particle class
@@ -155,7 +170,7 @@ document.addEventListener("DOMContentLoaded", () => {
         this.size = Math.random() * 2 + 1;
         this.speedX = Math.random() * 0.5 - 0.25;
         this.speedY = Math.random() * 0.5 - 0.25;
-        this.color = Math.random() > 0.5 ? "#4c82fb" : "#8c6dfd";
+        this.color = Math.random() > 0.5 ? '#4c82fb' : '#8c6dfd';
         this.alpha = Math.random() * 0.5 + 0.1;
       }
 
@@ -199,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Draw connections
       ctx.globalAlpha = 0.05;
-      ctx.strokeStyle = "#4c82fb";
+      ctx.strokeStyle = '#4c82fb';
       ctx.lineWidth = 0.5;
 
       for (let i = 0; i < particlesArray.length; i++) {
@@ -225,8 +240,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Create background blocks
   const createBackgroundBlocks = () => {
-    const blocksContainer = document.createElement("div");
-    blocksContainer.className = "background-blocks";
+    const blocksContainer = document.createElement('div');
+    blocksContainer.className = 'background-blocks';
     document.body.appendChild(blocksContainer);
 
     // Create multiple block patterns across the screen
@@ -235,52 +250,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
     for (let y = 0; y < numBlocksY; y++) {
       for (let x = 0; x < numBlocksX; x++) {
-        const blockContainer = document.createElement("div");
-        blockContainer.className = "block-container";
+        const blockContainer = document.createElement('div');
+        blockContainer.className = 'block-container';
         blockContainer.style.left = `${x * 300 + Math.random() * 100}px`;
         blockContainer.style.top = `${y * 300 + Math.random() * 100}px`;
 
         // Create the 4 corner blocks
-        const topLeft = document.createElement("div");
-        topLeft.className = "block";
-        topLeft.style.top = "0";
-        topLeft.style.left = "0";
+        const topLeft = document.createElement('div');
+        topLeft.className = 'block';
+        topLeft.style.top = '0';
+        topLeft.style.left = '0';
 
-        const topRight = document.createElement("div");
-        topRight.className = "block";
-        topRight.style.top = "0";
-        topRight.style.right = "0";
+        const topRight = document.createElement('div');
+        topRight.className = 'block';
+        topRight.style.top = '0';
+        topRight.style.right = '0';
 
-        const bottomLeft = document.createElement("div");
-        bottomLeft.className = "block";
-        bottomLeft.style.bottom = "0";
-        bottomLeft.style.left = "0";
+        const bottomLeft = document.createElement('div');
+        bottomLeft.className = 'block';
+        bottomLeft.style.bottom = '0';
+        bottomLeft.style.left = '0';
 
-        const bottomRight = document.createElement("div");
-        bottomRight.className = "block";
-        bottomRight.style.bottom = "0";
-        bottomRight.style.right = "0";
+        const bottomRight = document.createElement('div');
+        bottomRight.className = 'block';
+        bottomRight.style.bottom = '0';
+        bottomRight.style.right = '0';
 
         // Create connecting lines
-        const topLine = document.createElement("div");
-        topLine.className = "block-line horizontal-line";
-        topLine.style.top = "10px";
-        topLine.style.left = "20px";
+        const topLine = document.createElement('div');
+        topLine.className = 'block-line horizontal-line';
+        topLine.style.top = '10px';
+        topLine.style.left = '20px';
 
-        const bottomLine = document.createElement("div");
-        bottomLine.className = "block-line horizontal-line";
-        bottomLine.style.bottom = "10px";
-        bottomLine.style.left = "20px";
+        const bottomLine = document.createElement('div');
+        bottomLine.className = 'block-line horizontal-line';
+        bottomLine.style.bottom = '10px';
+        bottomLine.style.left = '20px';
 
-        const leftLine = document.createElement("div");
-        leftLine.className = "block-line vertical-line";
-        leftLine.style.left = "10px";
-        leftLine.style.top = "20px";
+        const leftLine = document.createElement('div');
+        leftLine.className = 'block-line vertical-line';
+        leftLine.style.left = '10px';
+        leftLine.style.top = '20px';
 
-        const rightLine = document.createElement("div");
-        rightLine.className = "block-line vertical-line";
-        rightLine.style.right = "10px";
-        rightLine.style.top = "20px";
+        const rightLine = document.createElement('div');
+        rightLine.className = 'block-line vertical-line';
+        rightLine.style.right = '10px';
+        rightLine.style.top = '20px';
 
         blockContainer.appendChild(topLeft);
         blockContainer.appendChild(topRight);
